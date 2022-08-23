@@ -3,11 +3,11 @@ package com.appsplus.online.slot.core
 import android.webkit.WebView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
-abstract class Web(_webView: WebView, _mSwipeRefreshLayout: SwipeRefreshLayout) {
+abstract class Web(view: WebView, refreshLayout: SwipeRefreshLayout) {
 
-    protected var web_views: WebView = _webView
+    protected var webView: WebView = view
 
-    protected var mSwipeRefreshLayout: SwipeRefreshLayout = _mSwipeRefreshLayout
+    protected var swipeRefreshLayout: SwipeRefreshLayout = refreshLayout
 
     abstract fun options()
 

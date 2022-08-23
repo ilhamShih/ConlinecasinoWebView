@@ -6,21 +6,21 @@ import android.webkit.WebSettings.LOAD_DEFAULT
 import android.webkit.WebView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
-class Option(_webView: WebView, _mSwipeRefreshLayout: SwipeRefreshLayout) :
-    Web(_webView, _mSwipeRefreshLayout) {
+class Option(view: WebView, refreshLayout: SwipeRefreshLayout) :
+    Web(view, refreshLayout) {
 
 
     override fun gone() {
-        mSwipeRefreshLayout.isRefreshing = false
+        swipeRefreshLayout.isRefreshing = false
     }
 
     override fun visible() {
-        mSwipeRefreshLayout.isRefreshing = true
+        swipeRefreshLayout.isRefreshing = true
     }
 
     @SuppressLint("SetJavaScriptEnabled", "WrongConstant")
     override fun options() {
-        web_views.settings.apply {
+        webView.settings.apply {
             javaScriptEnabled = true
             javaScriptCanOpenWindowsAutomatically = true
             domStorageEnabled = true
@@ -29,22 +29,22 @@ class Option(_webView: WebView, _mSwipeRefreshLayout: SwipeRefreshLayout) :
             allowFileAccess = true
             cacheMode = LOAD_DEFAULT
         }
-        web_views.scrollBarStyle.apply {
+        webView.scrollBarStyle.apply {
             View.SCROLLBARS_INSIDE_OVERLAY
         }
 
     }
 
     override fun getViews(): WebView {
-        return web_views
+        return webView
     }
 
     override fun getSwipeRefresh(): SwipeRefreshLayout {
-        return mSwipeRefreshLayout
+        return swipeRefreshLayout
     }
 
     override fun getConfigSwipe() {
-        mSwipeRefreshLayout.isEnabled = false
+        swipeRefreshLayout.isEnabled = false
     }
 
 
