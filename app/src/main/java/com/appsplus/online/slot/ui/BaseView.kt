@@ -71,7 +71,7 @@ class BaseView : AppCompatActivity() {
         }
 
     }
-    /**  @param cotrollOnStart true пока не получили onDestroy */
+    /**  @param cotrollOnStart true пока в фокусе */
     override fun onStart() {
         if (cotrollOnStart) {
             option.getViews().loadUrl(url)
