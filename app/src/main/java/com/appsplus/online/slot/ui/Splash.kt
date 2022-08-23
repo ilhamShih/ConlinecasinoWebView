@@ -44,7 +44,7 @@ class Splash : AppCompatActivity() {
         Handler(mainLooper).postDelayed(
             { startActivity(Intent(this@Splash, BaseView::class.java))
                 finish()
-            }, 3000
+            }, 1000
         )
     }
 }
